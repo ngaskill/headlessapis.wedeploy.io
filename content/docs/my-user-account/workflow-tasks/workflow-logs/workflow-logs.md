@@ -4,26 +4,26 @@ description: Workflow Logs Endpoint documentation
 weight: 2
 ---
 
-## The Workflow Logs Model
+## Model
 
-The following fields are currently supported:
+The following fields are currently supported for this model: 
 
-* **dateCreated**: creation date of the workflow log.
-* **commentLog**: comment of the workflow log.
-* **previousState**: if exists, state before the current one.
-* **state**: state of the workflow log.
-* **type**: workflow log type (e.g.: `TASK_ASSIGNMENT`, `TASK_COMPLETION`, `TASK_UPDATE`).
+* **dateCreated**: The workflow log's creation date.
+* **commentLog**: The workflow log's comments.
+* **previousState**: The workflow log's state prior to the current state.
+* **state**: The workflow log's current state. 
+* **type**: The workflow log's type (e.g.: `TASK_ASSIGNMENT`, `TASK_COMPLETION`, `TASK_UPDATE`).
 
-Also this model offers the following links:
+This model also offers the following links: 
 
 * **auditPerson**: 
-* **person**: person assigned to the workflow task.
-* **previousPerson**: if exists, person assigned before the current one.
-* **task**: workflow task which the log belongs.
+* **person**: The person currently assigned to the workflow task.
+* **previousPerson**: The person assigned to the workflow task prior to the current assignee.
+* **task**: The workflow log's workflow task.
 
-## Workflow Logs Collection
+## Example
 
-This is an example of the request: 
+Here's an example of a request to this endpoint: 
 
 ```bash
 curl --request GET \
@@ -31,7 +31,7 @@ curl --request GET \
   --header 'Accept: application/hal+json'
 ```
 
-The response in `json HAL` format will contain inside the `_embedded` section, the workflow log under the key `WorkflowLog`.
+In a JSON-HAL formatted response, the `_embedded` section contains the `WorkflowLog` key. This key contains the workflow log: 
 
 ```json
 {
@@ -81,6 +81,6 @@ The response in `json HAL` format will contain inside the `_embedded` section, t
 }
 ```
 
-When navigating through the list of entities, the link to each entity can be found with the rel `self`.
+When navigating through a list of entities, the `self` rel contains the link to each entity. 
 
-You can found more examples in the following [link](/docs/my-user-account/workflow-tasks/workflow-logs/examples.html).
+You can find more examples [here](/docs/my-user-account/workflow-tasks/workflow-logs/examples.html).

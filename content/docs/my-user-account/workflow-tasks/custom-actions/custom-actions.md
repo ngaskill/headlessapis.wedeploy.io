@@ -31,13 +31,11 @@ The responses in `json HAL` format will contain inside the `_embedded` section, 
 }
 ```
 
-When navigating through the list of entities, the link to each entity can be found with the rel `self`.
+When navigating through a list of entities, the `self` rel contains the link to each entity. 
 
-### Assign workflow task to me
+### Assign a Workflow Task to Me
 
-To perform this action, you don't need any additional attibute.
-
-This is an example of the request: 
+You don't need additional attributes to perform this action. Here's an example of the request: 
 
 ```bash
 curl --request POST \
@@ -47,13 +45,13 @@ curl --request POST \
   --data '{}'
 ```
 
-### Assign workflow task to user
+### Assign a Workflow Task to a User
 
-To perform this action, you need:
+To perform this action, you need the `assigneeId` attribute: 
 
-* **assigneeId**: user identifier (e.g.: `http://localhost:8080/o/api/p/user-account/20139`).
+* **assigneeId**: The ID of the user to assign the workflow task to (e.g., `http://localhost:8080/o/api/p/user-account/20139`).
 
-This is an example of the request: 
+Here's an example of the request: 
 
 ```bash
 curl --request POST \
@@ -63,13 +61,13 @@ curl --request POST \
   --data '{"assigneeId": ""}'
 ```
 
-### Change workflow task transition
+### Change a Workflow Task's Transition
 
-To perform this action, you need:
+To perform this action, you need the `transition` attribute:
 
-* **transition**: transition name available in the workflow task. (e.g.: `approve`, `reject`). If the transition is empty, the custom actions will take the default one in the workflow definition.
+* **transition**: The name of the transition you want to change in the workflow task (e.g., `approve`, `reject`). If the transition is empty, the custom actions use workflow definition's default transition.
 
-This is an example of the request: 
+Here's an example of the request: 
 
 ```bash
 curl --request POST \
@@ -79,14 +77,14 @@ curl --request POST \
   --data '{"transition": ""}'
 ```
 
-### Add/Update workflow task due date
+### Add/Update a Workflow Task's Due Date
 
-To perform this action, you need:
+To perform this action, you need these attributes:
 
-* **dueDate**: due date of the workflow task.
-* **comment** (_Optional_): additional comment for the workflow log.
+* **dueDate**: The workflow task's due date.
+* **comment** (_Optional_): An additional comment for the workflow log.
 
-This is an example of the request: 
+Here's an example of the request: 
 
 ```bash
 curl --request POST \
@@ -95,6 +93,6 @@ curl --request POST \
   --data '{"dueDate": "2018-12-31T23:59Z", "comment": "This is a comment"}'
 ```
 
-When navigating through the list of entities, the link to each entity can be found with the rel `self`.
+When navigating through a list of entities, the `self` rel contains the link to each entity. 
 
-You can found more examples in the following [link](/docs/my-user-account/workflow-tasks/custom-actions/examples.html).
+You can find more examples [here](/docs/my-user-account/workflow-tasks/custom-actions/examples.html). 

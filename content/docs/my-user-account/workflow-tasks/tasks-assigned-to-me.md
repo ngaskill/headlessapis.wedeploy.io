@@ -4,32 +4,32 @@ description: Tasks Assigned To Me Endpoint documentation
 weight: 4
 ---
 
-## Tasks Assigned To Me Model
+## Model
 
-The following fields are currently supported:
+The following fields are currently supported for this model: 
 
-* **completed**: whether the workflow task is completed or not.
-* **dateCompleted**: completion date of the workflow task.
-* **dateCreated**: creation date of the workflow task.
-* **dueDate**: if exists, expiration date of the workflow task.
+* **completed**: Whether the workflow task is complete.
+* **dateCompleted**: The workflow task's completion date.
+* **dateCreated**: The workflow task's creation date.
+* **dueDate**: The workflow task's expiration date.
 * **definitionName**: 
 * **description**:
 * **name**:
-* **transitions**: name of the possible transitions of the workflow task.
+* **transitions**: Names of the workflow task's possible transitions.
 
-Also this model offers the following links:
+This model also offers the following links: 
 
-* **logs**: `WorkflowLog` list of a workflow task. You can read more about this in the following [link](/docs/my-user-account/workflow-tasks/workflow-logs/index.html).
+* **logs**: The workflow task's `WorkflowLog` list. You can read more about this [here](/docs/my-user-account/workflow-tasks/workflow-logs/index.html).
 
-The model also have the information about the object involved:
+This model also has information about the object in the workflow task:
 
-* **object**: indicates the object involved in the workflow task.
-  * **identifier**: the object's URL.
-  * **resourceType**: the object's type (e.g.: `Comment` or `BlogPosting`).
+* **object**: The object in the workflow task.
+  * **identifier**: The object's URL.
+  * **resourceType**: The object's type (e.g., `Comment` or `BlogPosting`).
 
-## Workflow Tasks Assigned To Me Collection
+## Example
 
-This is an example of the request: 
+Here's an example of a request to this endpoint: 
 
 ```bash
 curl --request GET \
@@ -37,7 +37,7 @@ curl --request GET \
   --header 'Accept: application/hal+json'
 ```
 
-The response in `json HAL` format will contain inside the `_embedded` section, the workflow task under the key `WorkflowTask`.
+In a JSON-HAL formatted response, the `_embedded` section contains the `WorkflowTask` key. This key contains the workflow task: 
 
 ```json
 {
@@ -88,6 +88,6 @@ The response in `json HAL` format will contain inside the `_embedded` section, t
 }
 ```
 
-When navigating through the list of entities, the link to each entity can be found with the rel `self`.
+When navigating through a list of entities, the `self` rel contains the link to each entity. 
 
-You can found more examples in the following [link](/docs/my-user-account/workflow-tasks/examples.html).
+You can find more examples [here](/docs/my-user-account/workflow-tasks/examples.html). 
