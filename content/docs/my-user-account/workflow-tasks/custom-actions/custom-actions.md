@@ -4,9 +4,9 @@ description: Workflow Tasks Custom Actions documentation
 weight: 2
 ---
 
-## Workflow Tasks Custom Actions
+## Custom Actions for Workflow Tasks
 
-The responses in `json HAL` format will contain inside the `_embedded` section, the workflow task under the key `WorkflowTask`.
+In a JSON-HAL formatted response for a workflow task, the `self` rel in the `_links` section contains the workflow task's link. The `_embedded` section of a workflow task contains the object that task applies to:
 
 ```json
 {
@@ -30,8 +30,6 @@ The responses in `json HAL` format will contain inside the `_embedded` section, 
     }
 }
 ```
-
-When navigating through a list of entities, the `self` rel contains the link to each entity. 
 
 ### Assign a Workflow Task to Me
 
@@ -58,7 +56,7 @@ curl --request POST \
   --url http://localhost:8080/o/api/c/workflow-tasks/42499/assign-to-user \
   --header 'Accept: application/hal+json' \
   --header 'Content-Type: application/json' \
-  --data '{"assigneeId": ""}'
+  --data '{"assigneeId": "http://localhost:8080/o/api/p/user-account/20139"}'
 ```
 
 ### Change a Workflow Task's Transition
