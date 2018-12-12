@@ -7,7 +7,7 @@ weight: 1
 
 ## Model
 
-The following fields are currently supported for this model:
+The model for My User Account describes the current user's account in the portal. The following fields are currently supported for this model:
 
 * **birthDate**: The user's birth date.
 * **alternateName**: The user's alias.
