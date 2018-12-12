@@ -4,31 +4,31 @@ description: User Account Endpoint documentation
 weight: 1
 ---
 
-## The User Account Model
+## Model
 
-The following fields are currently supported:
+The model for User Account describes user accounts in the portal. The following fields are currently supported for this model:
 
-* **birthDate**: the date of birth of the user.
-* **alternateName**: the alias of the user.
-* **dashboardURL**: the user's dashboard URL.
-* **email**: the user's email address.
-* **familyName**: the user's last name.
-* **gender**: the user's gender.
-* **givenName**: the user's name.
-* **name**: the user's full name.
-* **profileURL**: the user's profile URL.
+* **birthDate**: The user's birth date.
+* **alternateName**: The user's alias.
+* **dashboardURL**: The user's dashboard URL.
+* **email**: The user's email address.
+* **familyName**: The user's last name.
+* **gender**: The user's gender.
+* **givenName**: The user's name.
+* **name**: The user's full name.
+* **profileURL**: The user's profile URL.
 
-Also this model offers the following links:
+This model also contains the following links:
 
-* **roles**: the collection of roles that the user has assigned.
-* **myOrganizations**: the list of organizations that the user is member of.
-* **myWebSites**: the list of web sites that the user is member of.
-* **tasksAssignedToMe**: the list of the tasks assigned to the user.
-* **tasksAssignedToMyRoles**: the list of the tasks assigned to the user's roles.
+* **roles**: The user's roles.
+* **myOrganizations**: The user's Organizations.
+* **myWebSites**: The user's Sites.
+* **tasksAssignedToMe**: The tasks assigned to the user.
+* **tasksAssignedToMyRoles**: The tasks assigned to the user's roles.
 
-## My User Account Collection
+## Example
 
-This is an example of the request: 
+Here's an example of a request to this endpoint: 
 
 ```bash
 curl --request GET \
@@ -36,7 +36,7 @@ curl --request GET \
   --header 'Accept: application/hal+json'
 ```
 
-The response in `json HAL` format will contain inside the `_embedded` section, the user logged under the key `Liferay:UserAccount`.
+In a JSON-HAL formatted response, the `_embedded` section contains the `Liferay:UserAccount` key. This key contains the currently logged-in user's data: 
 
 ```json
 {
@@ -112,6 +112,6 @@ The response in `json HAL` format will contain inside the `_embedded` section, t
 }
 ```
 
-When navigating through the list of entities, the link to each entity can be found with the rel `self`.
+When navigating through a list of entities, the `self` rel contains the link to each entity. 
 
-You can find more examples in the following [link](/docs/my-user-account/examples.html).
+You can find more examples [here](/docs/user-account/examples.html). 

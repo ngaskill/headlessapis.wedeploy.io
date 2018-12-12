@@ -19,7 +19,7 @@ The following fields are currently supported for this model:
 * **name**: The user's full name.
 * **profileURL**: The user's profile URL.
 
-The model also offers the following links:
+This model also contains the following links:
 
 * **roles**: The user's roles.
 * **myOrganizations**: The user's Organizations.
@@ -27,7 +27,7 @@ The model also offers the following links:
 * **tasksAssignedToMe**: The tasks assigned to the user.
 * **tasksAssignedToMyRoles**: The tasks assigned to the user's roles.
 
-The model also has the user's contact information:
+This model also has the user's contact information:
 
 * **address**: The user's postal addresses.
 * **email**: The user's additional email addresses.
